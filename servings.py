@@ -112,27 +112,12 @@ def runns(resp_var, size_of_test_data, dataset, positive_class, n_estimators, im
     rec = recall_score(test_labels, predicted, pos_label=positive_class)
     # f1 scorea
     fscore = f1_score(test_labels, predicted, pos_label=positive_class)
-    # fbeta score
-    fbeta = fbeta_score(test_labels, predicted, beta=0.5)
-    # hamming_loss
-    hamming = hamming_loss(test_labels, predicted)
-    # jaccard similarity score
-    jaccard = jaccard_similarity_score(test_labels, predicted)
-    # logloss
-    logloss = log_loss(test_labels, predicted)
-    # zero-oneloss
-    zero_one = zero_one_loss(test_labels, predicted)
-    # auc roc
-    area_under_roc = roc_auc_score(test_labels, pred_prob[:, [1]])
-    # cohen_score
-    cohen = cohen_kappa_score(test_labels, predicted)
-    # mathews corr
-    mathews = matthews_corrcoef(test_labels, predicted)
+
+
     # Variable importances from the important features selection stage
     variable_importance_list = list(zip(prds, feature_imp))
     output = {"accuracy": accuracy, "precision": precision, "average precision": avg_precision, "recall": rec,
-              "fscore": fscore, "fbeta": fbeta, "hamming": hamming, "jaccard": jaccard, "logloss": logloss,
-              "zero_one": zero_one, "area_under_roc": area_under_roc, "cohen": cohen, "mathews": mathews}
+              "fscore": fscore}
     output = json.dumps(output)
     return output
 
