@@ -1,4 +1,4 @@
-#!/home/kimaru/PycharmProjects/ML_Served/MLServeEnv/bin/python
+#!/home/kimaru/PycharmProjects/ML_Served/MLserving/bin/python
 
 import sys
 import getopt
